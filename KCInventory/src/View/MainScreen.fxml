@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainScreenController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="259.0" minHeight="20.0" prefHeight="234.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="109.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Button contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="87.0" text="Exit" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets right="20.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#deletePart" prefHeight="31.0" prefWidth="88.0" text="Delete" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="324.0" right="5.0" top="200.0" />
+         </GridPane.margin>
+      </Button>
+      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openModifyPart" prefWidth="75.0" text="Modify" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="244.0" top="200.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#openAddPart" prefHeight="31.0" prefWidth="75.0" text="Add" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="164.0" top="200.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#deleteProduct" prefHeight="31.0" prefWidth="88.0" text="Delete" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="324.0" top="200.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#openModifyProduct" prefWidth="75.0" text="Modify" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="244.0" top="200.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#openAddProduct" prefWidth="75.0" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="164.0" top="200.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#searchPart" text="Search" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="203.0" left="170.0" />
+         </GridPane.margin>
+      </Button>
+      <Button alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#searchProduct" text="Search" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="203.0" left="170.0" />
+         </GridPane.margin>
+      </Button>
+      <Label alignment="CENTER" contentDisplay="CENTER" text="Inventory Management System" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Black" size="20.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Parts" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="203.0" left="21.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label text="Products" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="203.0" left="21.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField fx:id="searchPartField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="31.0" prefWidth="169.0" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="203.0" left="243.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="searchProductField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="31.0" prefWidth="169.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="203.0" left="243.0" />
+         </GridPane.margin>
+      </TextField>
+      <TableView fx:id="tvParts" prefHeight="167.0" prefWidth="392.0" GridPane.rowIndex="1">
+        <columns>
+          <TableColumn fx:id="partId" prefWidth="59.0" text="Part ID" />
+          <TableColumn fx:id="partName" prefWidth="84.0" text="Part Name" />
+            <TableColumn fx:id="partStock" prefWidth="116.0" text="Inventory Level" />
+            <TableColumn fx:id="partPrice" prefWidth="132.0" text="Price/Cost per Unit" />
+        </columns>
+         <GridPane.margin>
+            <Insets bottom="51.0" left="20.0" right="20.0" top="50.0" />
+         </GridPane.margin>
+      </TableView>
+      <TableView fx:id="tvProducts" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <columns>
+          <TableColumn fx:id="productId" prefWidth="84.0" text="Product ID" />
+          <TableColumn fx:id="productName" prefWidth="110.0" text="Product Name" />
+            <TableColumn fx:id="productStock" prefWidth="115.0" text="Inventory Level" />
+            <TableColumn fx:id="productPrice" prefWidth="82.0" text="Price per Unit" />
+        </columns>
+         <GridPane.margin>
+            <Insets bottom="51.0" left="20.0" right="20.0" top="50.0" />
+         </GridPane.margin>
+      </TableView>
+   </children>
+</GridPane>

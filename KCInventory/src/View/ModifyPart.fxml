@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefHeight="498.0" prefWidth="493.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ModifyPartController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="432.0" minWidth="10.0" prefWidth="411.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="0.0" prefWidth="21.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="191.0" minHeight="2.0" prefHeight="78.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="346.0" minHeight="10.0" prefHeight="336.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="176.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label prefHeight="44.0" prefWidth="135.0" text="Modify Part">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" />
+         </GridPane.margin>
+      </Label>
+      <RadioButton fx:id="inHouseRadio" mnemonicParsing="false" text="In-House">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="150.0" />
+         </GridPane.margin>
+      </RadioButton>
+      <RadioButton fx:id="outsourcedRadio" mnemonicParsing="false" text="Outsourced">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="250.0" />
+         </GridPane.margin>
+      </RadioButton>
+      <Label text="ID" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="230.0" left="60.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="Name" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="130.0" left="60.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="modifyPartIdField" disable="true" prefHeight="31.0" prefWidth="107.0" text="Auto Gen-Disabled" GridPane.rowIndex="1">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="230.0" left="160.0" right="40.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="modifyPartNameField" promptText="Part Name" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="130.0" left="160.0" right="40.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="modifyPartStockField" promptText="Inv" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="30.0" left="160.0" right="40.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="modifyPartPriceField" promptText="Price/Cost" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="160.0" right="100.0" top="70.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label text="Inv" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="30.0" left="60.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Price/Cost" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="60.0" top="70.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Max" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="60.0" top="170.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="modifyPartMaxField" prefHeight="39.0" prefWidth="88.0" promptText="Max" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="160.0" right="160.0" top="170.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label fx:id="modifyPartLabel" text="Company Name" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="20.0" top="270.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField fx:id="dynamicField" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="160.0" right="120.0" top="270.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Button mnemonicParsing="false" onAction="#cancel" text="Cancel" GridPane.rowIndex="2">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="350.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#save" text="Save" GridPane.rowIndex="2">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="280.0" />
+         </GridPane.margin>
+      </Button>
+      <Label text="Min" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="280.0" top="170.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField fx:id="modifyPartMinField" prefHeight="39.0" prefWidth="88.0" promptText="Min" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="320.0" top="170.0" />
+         </GridPane.margin>
+      </TextField>
+   </children>
+</GridPane>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="1039.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ModifyProductController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="587.0" minWidth="10.0" prefWidth="411.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="683.0" minWidth="10.0" prefWidth="628.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="342.0" minHeight="10.0" prefHeight="271.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="215.0" minHeight="10.0" prefHeight="179.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="119.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TableView fx:id="tvParts" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+        <columns>
+          <TableColumn fx:id="partId" prefWidth="121.0" text="Part ID" />
+          <TableColumn fx:id="partName" prefWidth="98.0" text="Part Name" />
+            <TableColumn fx:id="partStock" prefWidth="159.0" text="Inventory Level" />
+            <TableColumn fx:id="partPrice" prefWidth="159.0" text="Price per Unit" />
+        </columns>
+         <GridPane.margin>
+            <Insets bottom="50.0" left="20.0" right="70.0" top="90.0" />
+         </GridPane.margin>
+      </TableView>
+      <TableView fx:id="tvProductParts" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <columns>
+          <TableColumn fx:id="productId" prefWidth="118.0" text="Part ID" />
+          <TableColumn fx:id="productName" prefWidth="104.0" text="Part Name" />
+            <TableColumn fx:id="productStock" prefWidth="156.0" text="Inventory Level" />
+            <TableColumn fx:id="productPrice" prefWidth="159.0" text="Price per Unit" />
+        </columns>
+         <GridPane.margin>
+            <Insets left="20.0" right="70.0" top="40.0" />
+         </GridPane.margin>
+      </TableView>
+      <Button mnemonicParsing="false" onAction="#searchProduct" prefHeight="35.0" prefWidth="95.0" text="Search" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets bottom="150.0" left="140.0" />
+         </GridPane.margin>
+      </Button>
+      <TextField fx:id="modifyProductSearchField" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets bottom="150.0" left="250.0" right="160.0" />
+         </GridPane.margin>
+      </TextField>
+      <Button mnemonicParsing="false" onAction="#add" prefHeight="38.0" prefWidth="95.0" text="Add" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets left="450.0" top="230.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#save" prefHeight="35.0" prefWidth="95.0" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="340.0" top="49.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#cancel" prefHeight="35.0" prefWidth="95.0" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="450.0" top="49.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#deletePart" prefHeight="35.0" prefWidth="95.0" text="Delete" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="50.0" left="450.0" />
+         </GridPane.margin>
+      </Button>
+      <Label text="ModifyProduct">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="150.0" left="30.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField fx:id="modifyProductIdField" disable="true" promptText="Auto Gen-Disabled">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="110.0" right="90.0" top="20.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="modifyProductNameField" promptText="Product Name">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="110.0" right="90.0" top="120.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="modifyProductPriceField" promptText="Price" GridPane.rowIndex="1">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="130.0" left="110.0" right="90.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="modifyProductStockField" promptText="Inv">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="110.0" right="90.0" top="220.0" />
+         </GridPane.margin>
+      </TextField>
+      <Label text="Inv">
+         <GridPane.margin>
+            <Insets left="20.0" top="220.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="Name">
+         <GridPane.margin>
+            <Insets left="20.0" top="120.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="ID">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="20.0" top="20.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField fx:id="modifyProductMaxField" promptText="Max" GridPane.rowIndex="1">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="30.0" left="110.0" right="200.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="modifyProductMinField" promptText="Min" GridPane.rowIndex="1">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="30.0" left="270.0" right="60.0" />
+         </GridPane.margin>
+      </TextField>
+      <Label text="Price" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="130.0" left="20.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="Max" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="30.0" left="20.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Min" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="30.0" left="230.0" />
+         </GridPane.margin>
+      </Label>
+   </children>
+</GridPane>
